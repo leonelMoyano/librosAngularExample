@@ -1,0 +1,38 @@
+<h1 mat-dialog-title>
+  Agregar libro
+  <button id="close-button" mat-icon-button [mat-dialog-close]>
+    <mat-icon aria-label="Cerrar">clear</mat-icon>
+  </button>
+</h1>
+<form [formGroup]="bookForm" (ngSubmit)="onSubmit()">
+  <div mat-dialog-content class="form-container">
+    <!-- Input de nombre -->
+    <mat-form-field>
+      <input matInput [(ngModel)]="book.name" formControlName="name" placeholder="Nombre">
+      <mat-error *ngIf="bookForm.get('name').invalid">Ingrese nombre</mat-error>
+    </mat-form-field>
+
+    <!-- Input de editorial -->
+    <mat-form-field>
+      <input matInput [(ngModel)]="book.editorial" formControlName="editorial" placeholder="Editorial">
+      <mat-error *ngIf="bookForm.get('editorial').invalid">Ingrese editorial</mat-error>
+    </mat-form-field>
+
+    <!-- Input de autor -->
+    <mat-form-field>
+      <input matInput [(ngModel)]="book.author" formControlName="author" placeholder="Autor">
+      <mat-error *ngIf="bookForm.get('author').invalid">Ingerese autor</mat-error>
+    </mat-form-field>
+
+    <!-- Input de edicion -->
+    <mat-form-field>
+      <input matInput [(ngModel)]="book.edition" formControlName="edition" placeholder="Edici&oacute;n">
+      <mat-error *ngIf="bookForm.get('edition').invalid">Ingrese edicion numerica</mat-error>
+    </mat-form-field>
+  </div>
+
+  <!-- Submit form -->
+  <div id="button-container" mat-dialog-actions>
+    <button id="submit-button" type="submit" mat-flat-button [disabled]="!bookForm.valid">Guardar</button>
+  </div>
+</form>

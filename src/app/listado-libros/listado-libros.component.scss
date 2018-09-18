@@ -1,0 +1,67 @@
+table {
+  width: 100%;
+  box-shadow: none;
+}
+
+.mat-form-field {
+  font-size: 14px;
+  width: 100%;
+}
+
+button#save-button{
+  position: fixed;
+  left: 50%;
+  bottom: 20px;
+  transform: translate(-50%, -50%);
+  margin: 0 auto;
+
+  width: 170px;
+  border-radius: 25px;
+}
+
+td, th{
+  padding: 5px !important;
+}
+
+th{
+  background-color: #eeeeee;
+  border-bottom-style: none !important;
+
+  border-right-style: solid;
+  border-right-width: 3px;
+  border-right-color: white;
+}
+
+th.book-name{
+  width: 35%;
+
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+th.book-editorial{
+  width: 20%;
+}
+th.book-author{
+  width: 35%;
+}
+th.book-edition{
+  width: 10%;
+
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+
+  border-right-style: none;
+}
+
+td.book-name{
+  width: 35%;
+}
+td.book-editorial{
+  width: 20%;
+}
+td.book-author{
+  width: 35%;
+}
+td.book-edition{
+  width: 10%;
+}

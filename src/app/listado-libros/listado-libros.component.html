@@ -1,0 +1,42 @@
+<mat-form-field>
+  <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Busc&aacute; por nombre y/o autor">
+  <mat-icon matSuffix>search</mat-icon>
+</mat-form-field>
+
+<table mat-table [dataSource]="dataSource">
+  <!-- Columna Nombre -->
+  <ng-container matColumnDef="name">
+    <th class="book-name" mat-header-cell *matHeaderCellDef><b>Nombre</b></th>
+    <td class="book-name" mat-cell *matCellDef="let element"> {{element.name}} </td>
+  </ng-container>
+
+  <!-- Columna Editorial -->
+  <ng-container matColumnDef="editorial">
+    <th class="book-editorial" mat-header-cell *matHeaderCellDef><b>Editorial</b></th>
+    <td class="book-editorial" mat-cell *matCellDef="let element"> {{element.editorial}} </td>
+  </ng-container>
+
+  <!-- Columna Autor -->
+  <ng-container matColumnDef="author">
+    <th class="book-author" mat-header-cell *matHeaderCellDef><b>Autor</b></th>
+    <td class="book-author" mat-cell *matCellDef="let element"> {{element.author}} </td>
+  </ng-container>
+
+  <!-- Columna Edicion -->
+  <ng-container matColumnDef="edition">
+    <th class="book-edition" mat-header-cell *matHeaderCellDef><b>Edicion</b></th>
+    <td class="book-edition" mat-cell class="edition-cell" *matCellDef="let element">
+      <span>
+        {{element.edition}}
+      </span>
+      <button class="delete-button" mat-icon-button (click)="deleteBook(element)">
+        <mat-icon aria-label="Borrar libro">clear</mat-icon>
+      </button>
+    </td>
+  </ng-container>
+
+  <tr class="table-header" mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+
+<button id="save-button" mat-flat-button (click)="openDialog()">Agregar libro</button>

@@ -1,0 +1,22 @@
+.container {
+  margin-top: 1em;
+  margin-right: 2em;
+  margin-left: 2em;
+}
+
+.spacer {
+  flex: 1 1 auto;
+  text-align: center;
+}
+
+.icon {
+  padding: 0 14px;
+}
+
+#shutdown-icon{
+	float: right;
+}
+
+#user-icon{
+	float: left;
+}
